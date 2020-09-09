@@ -17,5 +17,5 @@ jobs:
     - name: Test with pytest
       run: |
         conda install -c conda-forge papermill
-        conda update nb_conda nb_conda_kernels nb_anacondacloud
+        conda install nb_conda_kernels
         $CONDA/bin/papermill ./mynotebook.ipynb -p alpha 10 --inject-output-path ./test.ipynb
