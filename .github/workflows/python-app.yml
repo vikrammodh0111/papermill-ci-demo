@@ -17,4 +17,5 @@ jobs:
     - name: Test with pytest
       run: |
         conda install -c conda-forge papermill
-        $CONDA/bin/papermill ./mynotebook.ipynb -p alpha 10 --inject-output-path ./test.ipynb
+        conda install -n analysis_1 jupyter
+        $CONDA/bin/papermill ./mynotebook.ipynb -p alpha 10 --inject-output-path ./test.ipynb -k analysis_1
