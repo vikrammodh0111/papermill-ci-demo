@@ -18,4 +18,6 @@ jobs:
       run: |
         conda install -c conda-forge papermill
         conda install -n analysis_1 jupyter
+        conda activate analysis_1
+        jupyter kernelspec install --user --name analysis_1
         $CONDA/bin/papermill ./mynotebook.ipynb -p alpha 10 --inject-output-path ./test.ipynb -k analysis_1
