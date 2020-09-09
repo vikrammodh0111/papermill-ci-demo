@@ -28,6 +28,4 @@ jobs:
     - name: Test with pytest
       run: |
         conda install papermill
-        conda install pytest
-        $CONDA/bin/papermill ./mynotebook.ipynb -p alpha 10 --inject-output-path ./test.ipynb
         $CONDA/bin/pytest
