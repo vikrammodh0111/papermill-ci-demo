@@ -24,5 +24,5 @@ jobs:
     - name: Test with pytest
       run: |
         conda install -c conda-forge papermill
-        condat install pytest
+        conda install pytest
         $CONDA/bin/pytest
