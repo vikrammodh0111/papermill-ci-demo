@@ -1,0 +1,21 @@
+name: Python Package using Conda
+
+on: [push]
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 5
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - name: Test with pytest
+      run: |
+        conda install -c conda-forge papermill
+        conda install nb_conda_kernels
+        $CONDA/bin/papermill ./mynotebook.ipynb -p alpha 10 --inject-output-path ./test.ipynb
