@@ -16,6 +16,7 @@ jobs:
         python-version: 3.8
     - name: Test with pytest
       run: |
+        conda create -n analysis_1 python=3 ipykernel
         conda install -c conda-forge papermill
         conda install -n analysis_1 jupyter
         conda activate analysis_1
